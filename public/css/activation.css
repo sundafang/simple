@@ -1,0 +1,134 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:Microsoft YaHei;
+}
+body{
+    background:#DCDCDC;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: red;
+}
+.top{
+    width:100%;
+    height: 40px;
+    background: #32353e;
+    position: relative;
+}
+.top_left{
+    float: left;
+    height:40px;
+    width:40px;
+}
+.top_center{
+    text-align: center;
+    line-height: 40px;
+    color: #ffffff;
+    font-weight: bold;
+}
+.top_right{
+    height: 20px;
+    width: 60px;
+    background:#fc9843;
+    font-size:12px;
+    line-height:18px;
+    text-align: center;
+    color: #ffffff;
+    position: absolute;
+    right:3%;
+    top:10px;
+    border-radius: 160px;
+}
+
+.end{
+    width: 100%;
+    height:38px;
+    background: #000;
+    position: fixed;
+    bottom: 0;
+    color: #ffffff;
+    display: flex;
+    padding: 5px 0px;
+}
+.end_en{
+    flex:1;
+    text-align: center;
+    height:35px;
+}
+.end_img{
+    width: 80%;
+    margin: auto;
+    height:43px;
+}
+.end_img img{
+    height:100%;
+    margin: auto;
+}
+.img02{
+    display: none;
+
+}
+.img03{
+    display: none;
+}
+.img05{
+    display: none;
+}
+.img08{
+    display: none;
+}
+.account{
+    width: 94%;
+    padding: 0 3%;
+    height:100%;
+    margin-top: 30px;
+    border-bottom: 1px solid #cccccc;
+}
+.account_name{
+    width: 100%;
+    height:30px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #faa45c;
+    box-shadow: 0px 0px 5px #faa45c;
+    color: #afafaf;
+}
+.account_password{
+    width: 100%;
+    height:30px;
+    border-radius: 5px;
+    border: 1px solid #faa45c;
+    box-shadow: 0px 0px 5px #faa45c;
+    color: #afafaf;
+    margin-bottom: 10px;
+}
+.account_submit{
+    width: 100%;
+    height:30px;
+    border: none;
+    background: #f60;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+    margin-bottom:20px;
+}
+.prompt{
+    width: 94%;
+    padding: 5px 3%;
+    color: #666666;
+    font-size: 12px;
+    border-bottom: 1px solid #cccccc;
+}
+.prompt_sapn{
+    color: red;
+}
+.wechat{
+    width:94%;
+    padding: 5px 3%;
+}
+.wechat img{
+    width: 100%;
+}

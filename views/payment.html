@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link type="text/css" rel="stylesheet" href="../public/css/payment.css">
+      <title>Title</title>
+</head>
+<body>
+    <div class="box">
+        <div class="payment">
+            <a href="video/details.html">
+                <p class="a_p"><</p>
+            </a>
+            支付订单
+        </div>
+        <form class="payment_form">
+            订单编号：
+            <input class="payment_input" type="text" value="v1234567890">
+        </form>
+        <form class="payment_form01">
+             支付金额：
+             <input id="payment_input02" class="payment_input02" type="text" value="">
+        </form>
+        <div class="payment_bt">
+            <button class="payment_button">立刻支付</button>
+        </div>
+    </div>
+
+    <div class="success">
+        <img class="success_img" src="../public/img/asia/ti.PNG">
+        <p class="success_p">支付成功！</p>
+        <p class="success_p01">x</p>
+        <div style="clear: both"></div>
+    </div>
+
+    <div class="error">
+        <img class="error_img" src="../public/img/asia/ti1.png">
+        <p class="error_p">支付失败！</p>
+        <p class="error_p01">x</p>
+        <div style="clear: both"></div>
+    </div>
+
+
+    <script src="../public/js/zepto.min.js"></script>
+    <script src="../public/js/touch.js"></script>
+    <script src="../public/js/fx.js"></script>
+    <script src="../public/js/details/details.js"></script>
+    <script src="../public/js/payment/payment.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:Microsoft YaHei;
+}
+body{
+    background:#cbe2d0;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: red;
+}
+.top{
+    width:100%;
+    height: 40px;
+    background: #32353e;
+    position: relative;
+}
+.top01{
+    float: left;
+    width: 80%;
+    height:100%;
+}
+.top_left{
+    float: left;
+    height:40px;
+    width:40px;
+}
+.top_center{
+    text-align: center;
+    line-height: 40px;
+    color: #ffffff;
+    font-weight: bold;
+}
+.top_right{
+    height: 20px;
+    width: 60px;
+    background:#fc9843;
+    font-size:12px;
+    line-height:18px;
+    text-align: center;
+    color: #ffffff;
+    position: absolute;
+    right:3%;
+    top:10px;
+    border-radius: 160px;
+}
+
+.end{
+    width: 100%;
+    height:38px;
+    background: #000;
+    position: fixed;
+    bottom: 0;
+    color: #ffffff;
+    display: flex;
+    padding: 5px 0px;
+}
+.end_en{
+    flex:1;
+    text-align: center;
+    height:35px;
+}
+.end_img{
+    width: 80%;
+    margin: auto;
+    height:43px;
+}
+.end_img img{
+    height:100%;
+    margin: auto;
+}
+.img02{
+    display: none;
+
+}
+.img03{
+    display: none;
+}
+.img05{
+    display: none;
+}
+.img08{
+    display: none;
+}
+
+
+
+
+.box{
+    width: 100%;
+    height:100%;
+    margin-top: 20px;
+}
+.box_form{
+    margin-left: 3%;
+    color: #666666;
+}
+.form_input01{
+    margin-left: 20px;
+}
+.order{
+    width:94%;
+    padding: 3% 3%;
+    color: #666666;
+    font-size:14px;
+    margin-bottom: 10px;
+}
+.order_p{
+    width: 100%;
+    height:40px;
+    line-height: 40px;
+}
+.order_input{
+    width:97%;
+    height:35px;
+    color: #666666;
+    border:none;
+    border-radius: 5px;
+    background:#f6f6f6;
+    padding-left: 3%;
+}
+.order_textarea{
+    width:97%;
+    height:100px;
+    color: #666666;
+    border:none;
+    border-radius: 5px;
+    background:#f6f6f6;
+    padding-left: 3%;
+    text-align: left;
+}
+.submit{
+    width: 94%;
+    padding: 0 3%;
+}
+.submit_input{
+    width: 100%;
+    height:40px;
+    background: #0BBE06;
+    color: #ffffff;
+    border:none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
