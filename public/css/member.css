@@ -165,6 +165,20 @@ li{
     display:none;
 }
 
+.error{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    right: 15%;
+    top:13%;
+}
+
 .bomb_box{
 
     position: fixed;

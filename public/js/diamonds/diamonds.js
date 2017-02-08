@@ -33,5 +33,13 @@ $(function () {
             $(".img07").css("display","block");
             $(".img08").css("display","none");
         }
-    })
-})
+    });
+
+    $(".top_right").on("touchstart",function () {
+        $(".bxc").css("display","block");
+        $(".bomb_box").css("display","block")
+    });
+    $(".error").on("touchstart",function () {
+        $(".bxc").css("display","none")
+    });
+});

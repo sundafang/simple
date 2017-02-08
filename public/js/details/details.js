@@ -36,7 +36,7 @@ $(function () {
             $(this).css("display","none");
             document.getElementById("video_01").play();
             var c = $(".video_source").attr('src');
-             console.log(c)
+             //console.log(c)
              //ajax数据提交
             var n1= c.lastIndexOf("/")+1;
             var n2= c.lastIndexOf(".");
@@ -47,8 +47,7 @@ $(function () {
                 url:"http://192.168.199.179:8080/mnoooVideo/pay/video",//支付请求地址
                 timeout:320,
                 dataType:"jsonp",//返回数据格式
-                jsonpCallback:"jsonp",
-                async:true,
+                jsonp:"jsoncallback",
                 data: {
                    Videoname:videoname
                 },
@@ -86,6 +85,8 @@ $(function () {
                 $(".bomb_box").css("display","block");
             }
         })
+
+
     });
 
 
@@ -111,53 +112,6 @@ $(function () {
 
 })
 
-
-
-
-
-
-
-
-
-
-/*
-var  myVideo = document.getElementById('video_01')//获取video元素
-    ,tol = 0  //总时长
-    ;
-myVideo.addEventListener("loadedmetadata", function(){
-    tol =  myVideo.duration;//获取总时长
-});//</p> <p>播放
-function play(){
-    myVideo.play();
-}//</p> <p>暂停
-function pause(){
-    myVideo.pause();
-}//</p>  <p>播放时间点更新时
-myVideo.addEventListener("timeupdate", function(){
-    var  currentTime =  myVideo.currentTime;//获取当前播放时间
-
-    if (currentTime<=20){
-            document.getElementById("video_01").play();
-        }else {
-            document.getElementById("video_01").pause();
-            $(".video_center").css("display","block");
-            $(".bxc").css("display","block");
-            $(".bomb_box").css("display","block");
-        }
-
-   // console.log(currentTime);//在调试器中打印
-});//</p>  <p>设置播放点
-function playBySeconds(num){
-    myVideo.currentTime =  num;
-}//</p> <p>音量改变时
-myVideo.addEventListener("volumechange",  function(){
-    var volume =  myVideo.volume;//获取当前音量
-    console.log(volume);//在调试器中打印
-});//</p>  <p>设置音量
-function setVol(num){
-    myVideo.volume =  num;
-}
-*/
 
 
 

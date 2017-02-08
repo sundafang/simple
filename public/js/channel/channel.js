@@ -35,4 +35,11 @@ $(function () {
         }
     })
 
+    $(".top_right").on("touchstart",function () {
+        $(".bxc").css("display","block");
+        $(".bomb_box").css("display","block")
+    });
+    $(".error").on("touchstart",function () {
+        $(".bxc").css("display","none")
+    });
 })

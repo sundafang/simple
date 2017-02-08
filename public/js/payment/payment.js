@@ -12,7 +12,7 @@ $(function () {
     }(fn())
 
 //ajax数据提交
-    $(".payment_button").on("touchstart",function () {
+/*    $(".payment_button").on("touchstart",function () {
         var fName = $(".payment_input").val();
         var uName = $(".payment_input02").val();
         console.log(fName,uName)
@@ -38,7 +38,7 @@ $(function () {
             }
 
         })
-    })
+    })*/
 
     $(".success_p01").on("touchstart",function () {
         $(".success").css("display","none");

@@ -81,6 +81,9 @@ $(function () {
         $(".bomb_box").css("width","60%");
     })
 
+    $(".error").on("touchstart",function () {
+        $(".boc").css("display","none")
+    });
 
 })
 

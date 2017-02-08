@@ -5,12 +5,12 @@
 var $banner_carousel_li = $(".banner_carousel_li");
 //获取轮播容器
 var $banner_ul = $(".banner_ul");
-// //获取屏幕宽度
-// var wd = $(window).width();
-// //获取轮播个数
-// var lg = $(slider).length;
-// //计算容器宽度
-// var allWd = wd * lg;
+ //获取屏幕宽度
+var wd = $(window).width();
+ //获取轮播个数
+ //var lg = $(slider).length;
+ //计算容器宽度
+ var allWd = wd * lg;
 //获取所有的点
 var $banner_punctuation_li = $(".banner_punctuation_li");
 //获取屏幕宽度
@@ -111,15 +111,68 @@ var n=0;
             },2000,function () {
                 $(".banner_carousel_li").eq(0).appendTo($(".banner_ul"));
                 $(".banner_ul").css("margin-left",0);
+
                 n++;
-                if(n>=lg){
+                if(n>lg-1){
                     n=0;
                 }
+               //console.log(n)
                 $(".banner_punctuation_li").removeClass("banner_active");
                 $(".banner_punctuation_li").eq(n).addClass("banner_active");
             })
         }
 //滑动事件
+
+//触点屏幕时清除定时器
+$(".banner_ul").on("touchstart",function () {
+    clearInterval(settime);
+});
+//离开时启动定时器
+$(".banner_ul").on("touchend",function () {
+    settime =setInterval(sum,3000);
+})
+//向左滑动
+$(".banner_ul").on("swipeLeft",function (evt) {
+    evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
+
+
+    $('.banner_ul').animate({
+        'margin-left':-wd+'px'
+    }, 500, function(){
+        $(this).find('.banner_carousel_li').eq(0).appendTo($('.banner_ul'));
+        $('.banner_ul').css('margin-left',0);
+    });
+    n++;
+    if(n>lg-1){
+        n=0;
+    }
+    $(".banner_punctuation_li").removeClass("banner_active");
+    $(".banner_punctuation_li").eq(n).addClass("banner_active");
+
+    //console.log(n)
+
+})
+
+//向右滑动
+$(".banner_ul").on("swipeRight",function (evt) {
+    evt.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
+    $('.banner_ul').css('margin-left', -wd+'px');
+    $(this).find('.banner_carousel_li').first().before($(this).find('.banner_carousel_li').eq(4));
+    $('.banner_ul').animate({
+        'margin-left':0
+    }, 500);
+    n--;
+    if(n<0){
+        n=lg-1;
+    }
+    $(".banner_punctuation_li").removeClass("banner_active");
+    $(".banner_punctuation_li").eq(n).addClass("banner_active");
+
+})
+
+
+
+
 
 
 $(".top_right").on("touchstart",function () {
@@ -142,7 +195,9 @@ $(".cue_img").on("touchstart",function () {
 
 //点击获取触点坐标。
 
-
+$(".error").on("touchstart",function () {
+    $(".bxc").css("display","none")
+});
 
 
 
