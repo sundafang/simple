@@ -34,6 +34,8 @@ $(function () {
 
     $(".video_center").on("touchstart",function () {
             $(this).css("display","none");
+            $(".video_img").css("display","none");
+            $(".video_01").css("display","block");
             document.getElementById("video_01").play();
             var c = $(".video_source").attr('src');
              //console.log(c)
@@ -76,14 +78,22 @@ $(function () {
         video_01.addEventListener("timeupdate",function () {
             var currentTime= video_01.currentTime;
             // console.log(currentTime)
-            if (currentTime<=20){
+            if (currentTime<20){
                 //document.getElementById("video_01").play();
                 $(".video_center").css("display","none");
-            }else {
+            }else if(currentTime=20){
+                $(".video_center").css("display","block");
+                $(".video_img").css("display","block");
+                $(".video_01").css("display","none");
+                $(".bxc").css("display","block");
+                $(".bomb_box").css("display","block");
+            }else{
                 document.getElementById("video_01").pause();
                 $(".bxc").css("display","block");
                 $(".bomb_box").css("display","block");
             }
+
+
         })
 
 

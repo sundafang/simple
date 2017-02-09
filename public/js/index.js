@@ -151,7 +151,7 @@ $(".banner_ul").on("swipeLeft",function (evt) {
 
     //console.log(n)
 
-})
+});
 
 //向右滑动
 $(".banner_ul").on("swipeRight",function (evt) {
@@ -168,7 +168,7 @@ $(".banner_ul").on("swipeRight",function (evt) {
     $(".banner_punctuation_li").removeClass("banner_active");
     $(".banner_punctuation_li").eq(n).addClass("banner_active");
 
-})
+});
 
 
 
@@ -178,7 +178,7 @@ $(".banner_ul").on("swipeRight",function (evt) {
 $(".top_right").on("touchstart",function () {
     $(".bxc").css("display","block");
     $(".bomb_box").css("display","block")
-})
+});
 
 //上传缓存到cookie
 $(".cue_img").on("touchstart",function () {
@@ -191,7 +191,7 @@ $(".cue_img").on("touchstart",function () {
     }else{
         alert("失败");
     }
-})
+});
 
 //点击获取触点坐标。
 
