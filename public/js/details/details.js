@@ -33,6 +33,7 @@ $(function () {
     })
 
     $(".video_center").on("touchstart",function () {
+        var settime=setInterval(fn,20000);
             $(this).css("display","none");
             $(".video_img").css("display","none");
             $(".video_01").css("display","block");
@@ -43,7 +44,7 @@ $(function () {
             var n1= c.lastIndexOf("/")+1;
             var n2= c.lastIndexOf(".");
             var videoname= c.substring(n1,n2)
-            console.log(videoname)
+            //console.log(videoname)
             $.ajax({
                 type:"post",
                 url:"http://192.168.199.179:8080/mnoooVideo/pay/video",//支付请求地址
@@ -77,20 +78,12 @@ $(function () {
         //console.log(tol)
         video_01.addEventListener("timeupdate",function () {
             var currentTime= video_01.currentTime;
-            // console.log(currentTime)
-            if (currentTime<20){
+           // console.log(currentTime)
+            if (currentTime<=20){
                 //document.getElementById("video_01").play();
                 $(".video_center").css("display","none");
-            }else if(currentTime=20){
-                $(".video_center").css("display","block");
-                $(".video_img").css("display","block");
-                $(".video_01").css("display","none");
-                $(".bxc").css("display","block");
-                $(".bomb_box").css("display","block");
             }else{
                 document.getElementById("video_01").pause();
-                $(".bxc").css("display","block");
-                $(".bomb_box").css("display","block");
             }
 
 
@@ -98,6 +91,14 @@ $(function () {
 
 
     });
+    var settime=setInterval(fn,20000);
+    function fn() {
+        $(".video_center").css("display","block");
+        $(".video_img").css("display","block");
+        $(".video_01").css("display","none");
+        $(".bxc").css("display","block");
+        $(".bomb_box").css("display","block");
+    }
 
 
 
@@ -121,6 +122,14 @@ $(function () {
     })
 
 })
+
+$(".error").on("touchstart",function () {
+
+    $(".bxc").css("display","none");
+    $(".video_center").css("display","block");
+    $(".video_img").css("display","block");
+    $(".video_01").css("display","none");
+});
 
 
 
