@@ -36,31 +36,36 @@ $(function () {
         var settime=setInterval(fn,20000);
             $(this).css("display","none");
             $(".video_img").css("display","none");
-            $(".video_01").css("display","block");
+            $(".video_01").show();
             document.getElementById("video_01").play();
             var c = $(".video_source").attr('src');
              //console.log(c)
              //ajax数据提交
             var n1= c.lastIndexOf("/")+1;
             var n2= c.lastIndexOf(".");
-            var videoname= c.substring(n1,n2)
+            var fName= c.substring(n1,n2);
             //console.log(videoname)
             $.ajax({
                 type:"post",
-                url:"http://192.168.199.179:8080/mnoooVideo/pay/video",//支付请求地址
+                url:"http://192.168.199.179:8080/mnoooVideo/pay/check",//检查请求视频是否付费地址
                 timeout:320,
-                dataType:"jsonp",//返回数据格式
-                jsonp:"jsoncallback",
+                dataType:"json",//返回数据格式
+                jsoncallback :"json",
                 data: {
-                   Videoname:videoname
+                   fName:fName
                 },
                 success:function (request) {//成功后返回的数据处理
                     //根据返回值进行状态显示
-                    if (request=="True"){
-                        alert("支付成功！");
-                        //  $(".success").css("display","block");
+                    console.log(request);
+                    if (request=="true"){
+                        console.log("支付成功！");
+                        clearInterval(settime);
+
+                    }else if(request=="wait"){
+                        console.log("正在付费")
+
                     }else{
-                        alert("支付失败！")
+                        console.log("支付失败！")
                     }
                     // $(".error").css("display","block");
                 }
@@ -70,34 +75,15 @@ $(function () {
 
     })
 
-//视频监听
-    var video_01=document.getElementById("video_01");
-    video_01.addEventListener("loadedmetadata",function () {
-        tol=0;
-        tol= video_01.duration;
-        //console.log(tol)
-        video_01.addEventListener("timeupdate",function () {
-            var currentTime= video_01.currentTime;
-           // console.log(currentTime)
-            if (currentTime<=20){
-                //document.getElementById("video_01").play();
-                $(".video_center").css("display","none");
-            }else{
-                document.getElementById("video_01").pause();
-            }
 
-
-        })
-
-
-    });
     var settime=setInterval(fn,20000);
     function fn() {
         $(".video_center").css("display","block");
         $(".video_img").css("display","block");
-        $(".video_01").css("display","none");
+        $(".video_01").hide();
         $(".bxc").css("display","block");
         $(".bomb_box").css("display","block");
+        document.getElementById("video_01").pause();
     }
 
 
@@ -130,6 +116,46 @@ $(".error").on("touchstart",function () {
     $(".video_img").css("display","block");
     $(".video_01").css("display","none");
 });
+
+$(".cue_img").on("touchstart",function () {
+    var c = $(".video_source").attr('src');
+    //console.log(c)
+    //ajax数据提交
+    var n1= c.lastIndexOf("/")+1;
+    var n2= c.lastIndexOf(".");
+    var fName= c.substring(n1,n2);
+    console.log(fName);
+
+    $.ajax({
+        type:"POST",
+        url:"http://192.168.199.179:8080/mnoooVideo/pay/video",//视频付费提交地址
+        timeout:320,
+        data: {
+            fName:fName
+        },
+        success:function (request) {//成功后返回的数据处理
+            //根据返回值进行状态显示
+            console.log(request);
+            if (request=="true"){
+                console.log("支付成功！");
+                clearInterval(settime);
+
+            }else if(request=="wait"){
+                console.log("正在付费")
+
+            }else{
+                console.log("支付失败！");
+                  var settime=setInterval(fn,20000);
+            }
+            // $(".error").css("display","block");
+        }
+
+    });
+
+
+
+    });
+
 
 
 
