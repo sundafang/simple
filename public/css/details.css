@@ -451,7 +451,7 @@ video{
     position: absolute;
     width: 20px;
     height: 20px;
-    color: #ffffff;
+    color: red;
     font-size: 16px;
     border: 1px solid #ffffff;
     text-align: center;
@@ -459,4 +459,108 @@ video{
     border-radius: 50%;
     right: -15px;
     top: -15px;
+}
+.success{
+    display: none;
+    position: fixed;
+    height:100px;
+    width:150px;
+    top:50%;
+    left:50%;
+    margin-top: -50px;
+    margin-left: -75px;
+    background: #ffffff;
+    border-radius: 10px;
+
+}
+.success_p{
+    line-height: 100px;
+    text-align: center;
+    color:#849588;
+    font-size: 18px;
+}
+.success_x{
+    width: 20px;
+    height:20px;
+    color: red;
+    position: absolute;
+    top:0;
+    right:0;
+    font-size: 18px;
+    border: 1px solid red;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+}
+
+.fail{
+    display: none;
+    position: fixed;
+    height:100px;
+    width:150px;
+    top:50%;
+    left:50%;
+    margin-top: -50px;
+    margin-left: -75px;
+    background: #ffffff;
+    border-radius: 10px;
+    line-height: 100px;
+    text-align: center;
+    color: #000000;
+    font-size: 18px;
+}
+.fail_p{
+    line-height: 100px;
+    text-align: center;
+    color:#000000;
+    font-size: 18px;
+}
+.fail_x{
+    width: 20px;
+    height:20px;
+    color: red;
+    position: absolute;
+    top:0;
+    right:0;
+    font-size: 18px;
+    border: 1px solid red;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+}
+.being_paid{
+    display: none;
+    position: fixed;
+    height:100px;
+    width:150px;
+    top:50%;
+    left:50%;
+    margin-top: -50px;
+    margin-left: -75px;
+    background: #ffffff;
+    border-radius: 10px;
+    line-height: 100px;
+    text-align: center;
+    color: red;
+    font-size: 18px;
+}
+
+.being_p{
+    line-height: 100px;
+    text-align: center;
+    color:#849588;
+    font-size: 18px;
+}
+.being_x{
+    width: 20px;
+    height:20px;
+    color: red;
+    position: absolute;
+    top:0;
+    right:0;
+    font-size: 18px;
+    border: 1px solid red;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
 }

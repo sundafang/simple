@@ -1,4 +1,5 @@
 $(function () {
+
     $(".end_en").on("touchstart",function () {
         var a= $(this).index();
         // console.log(a);
@@ -32,6 +33,8 @@ $(function () {
         }
     })
 
+
+
     $(".video_center").on("touchstart",function () {
         var settime=setInterval(fn,20000);
             $(this).css("display","none");
@@ -56,27 +59,35 @@ $(function () {
                 },
                 success:function (request) {//成功后返回的数据处理
                     //根据返回值进行状态显示
-                    console.log(request);
+                    //console.log(request);
                     if (request=="true"){
-                        console.log("支付成功！");
+                        $(".success").show();
                         clearInterval(settime);
-
                     }else if(request=="wait"){
-                        console.log("正在付费")
+                        $(".fail").show();
 
                     }else{
-                        console.log("支付失败！")
+                        $(".being_paid").show();
                     }
                     // $(".error").css("display","block");
                 }
 
             })
 
-
     })
+// //视频监听
+//     var myVideo =  document.getElementById('video_01');//获取video元素
+//     var Video= myVideo.addEventListener("timeupdate", function(){
+//         var  currentTime =  myVideo.currentTime;//获取当前播放时间
+//         console.log(currentTime);//在调试器中打印
+//         if (currentTime>20){
+//             document.getElementById("video_01").pause();
+//             //console.log(currentTime);//在调试器中打印
+//         }
+//     });//设置播放点
 
-
-    var settime=setInterval(fn,20000);
+    //var settime=setInterval(fn,20000);
+    //定时器
     function fn() {
         $(".video_center").css("display","block");
         $(".video_img").css("display","block");
@@ -88,7 +99,8 @@ $(function () {
 
 
 
-//清除监听
+
+
 
 
     $(".cue_img").on("touchstart",function () {
@@ -124,7 +136,9 @@ $(".cue_img").on("touchstart",function () {
     var n1= c.lastIndexOf("/")+1;
     var n2= c.lastIndexOf(".");
     var fName= c.substring(n1,n2);
-    console.log(fName);
+
+//para_name 参数名称 para_value 参数值 url所要更改参数的网址
+    window.location="http://192.168.199.179:8080/mnoooVideo/pay/video?fName="+fName;
 
     $.ajax({
         type:"POST",
@@ -132,10 +146,11 @@ $(".cue_img").on("touchstart",function () {
         timeout:320,
         data: {
             fName:fName
-        },
+        }
+        /*,
         success:function (request) {//成功后返回的数据处理
             //根据返回值进行状态显示
-            console.log(request);
+           // console.log(request);
             if (request=="true"){
                 console.log("支付成功！");
                 clearInterval(settime);
@@ -148,14 +163,21 @@ $(".cue_img").on("touchstart",function () {
                   var settime=setInterval(fn,20000);
             }
             // $(".error").css("display","block");
-        }
+        }*/
 
     });
+    
 
-
-
-    });
-
+   });
+$(".success_x").on("touchstart",function () {
+    $(".success").hide();
+});
+$(".fail_x").on("touchstart",function () {
+    $(".fail").hide();
+});
+$(".being_x").on("touchstart",function () {
+    $(".being_paid").hide();
+});
 
 
 
