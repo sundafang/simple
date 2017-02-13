@@ -33,7 +33,23 @@ $(function () {
         }
     })
 
+//视频监听
+    var myVideo =  document.getElementById('video_01');//获取video元素
+    var Video= myVideo.addEventListener("timeupdate",sum)
+    //设置播放点
 
+    function sum(){
+        var  currentTime =  myVideo.currentTime;//获取当前播放时间
+
+        console.log(currentTime);//在调试器中打印
+        if (currentTime>5){
+            myVideo.currenTime=1;
+            document.getElementById("video_01").pause();
+            //console.log(currentTime);//在调试器中打印
+        }};
+
+    //var settime=setInterval(fn,20000);
+    //定时器
 
     $(".video_center").on("touchstart",function () {
         var settime=setInterval(fn,20000);
@@ -63,6 +79,8 @@ $(function () {
                     if (request=="true"){
                         $(".success").show();
                         clearInterval(settime);
+                    // removeEvent删除事件
+                        myVideo.removeEventListener("timeupdate",sum)
                     }else if(request=="wait"){
                         $(".fail").show();
 
@@ -75,19 +93,7 @@ $(function () {
             })
 
     })
-// //视频监听
-//     var myVideo =  document.getElementById('video_01');//获取video元素
-//     var Video= myVideo.addEventListener("timeupdate", function(){
-//         var  currentTime =  myVideo.currentTime;//获取当前播放时间
-//         console.log(currentTime);//在调试器中打印
-//         if (currentTime>20){
-//             document.getElementById("video_01").pause();
-//             //console.log(currentTime);//在调试器中打印
-//         }
-//     });//设置播放点
 
-    //var settime=setInterval(fn,20000);
-    //定时器
     function fn() {
         $(".video_center").css("display","block");
         $(".video_img").css("display","block");
@@ -96,12 +102,6 @@ $(function () {
         $(".bomb_box").css("display","block");
         document.getElementById("video_01").pause();
     }
-
-
-
-
-
-
 
     $(".cue_img").on("touchstart",function () {
         var a= $("input[name='sex']:checked").val();

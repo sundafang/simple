@@ -77,7 +77,9 @@ video{
 }
 .video_01{
     width:100%;
+    height:100%;
     display: none;
+    object-fit:contain
 }
 .prompt{
     width:100%;
