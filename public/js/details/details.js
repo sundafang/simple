@@ -1,4 +1,4 @@
-$(function () {
+window.onload=function () {
     var url="http://192.168.199.179:8080/mnoooVideo";
     var name=sessionStorage.getItem("name")
 
@@ -9,22 +9,78 @@ $(function () {
         $("#video_source").attr('src',getvid);
         /!*var getsrc=$(".video_img_src").attr('src');*!/
 
-        console.log(getsrc)
+        //console.log(getsrc)
     }else if (name=="02_012"){
-
-      var src=document.getElementById("video_img_src").setAttribute('src','../../public/img/poster/加勒比(9).JPG');//以有'src'属性,
-     var vdo=document.getElementById("video_source").setAttribute('src','../../public/img/video.ogg/加勒比(9).mp4');//以有'src'属性,
-        console.log(vdo)
-
-
-
-   //var getsrc=src.replace('')
-        // var getsrc="../../public/img/poster/加勒比(9).JPG";
-        // var getvid="../../public/img/video.ogg/加勒比(9).mp4";
-        // document.getElementById("list_img_src").attr('src',getsrc);
-        // document.getElementById("video_source").attr('src',getvid);
-        // console.log(typeof(c.src))
-        // console.log(typeof(getsrc))
+        var video=document.getElementById("video");
+        //var sroure=document.getElementById("video_source")
+        var vid  ='<div class="video_img">';
+        vid += '<img class="video_img_src" id="video_img_src" src="../../public/img/poster/加勒比(9).JPG">';
+        vid +='</div>';
+        vid +='<video class="video_01" id="video_01" controls preload="auto" >';
+        vid +='<source class="video_source" id="video_source" src="../../public/img/video.ogg/加勒比(9).mp4">';
+        vid +='</video>';
+        vid +='<div class="video_center">';
+        vid +='<img src="../../public/img/homepage/paly.png">';
+        vid +='</div>';
+        vid +='</div>';
+        video.innerHTML=vid;
+        //console.log(video)
+    }else if(name=="02_013"){
+        var video=document.getElementById("video");
+        //var sroure=document.getElementById("video_source")
+        var vid  ='<div class="video_img">';
+        vid += '<img class="video_img_src" id="video_img_src" src="../../public/img/poster/人妻.JPG">';
+        vid +='</div>';
+        vid +='<video class="video_01" id="video_01" controls preload="auto" >';
+        vid +='<source class="video_source" id="video_source" src="../../public/img/video.ogg/人妻3.mp4">';
+        vid +='</video>';
+        vid +='<div class="video_center">';
+        vid +='<img src="../../public/img/homepage/paly.png">';
+        vid +='</div>';
+        vid +='</div>';
+        video.innerHTML=vid;
+    }else if(name=="02_05"){
+        var video=document.getElementById("video");
+        //var sroure=document.getElementById("video_source")
+        var vid  ='<div class="video_img">';
+        vid += '<img class="video_img_src" id="video_img_src" src="../../public/img/poster/人妻(3).JPG">';
+        vid +='</div>';
+        vid +='<video class="video_01" id="video_01" controls preload="auto" >';
+        vid +='<source class="video_source" id="video_source" src="../../public/img/video.ogg/人妻(3).mp4">';
+        vid +='</video>';
+        vid +='<div class="video_center">';
+        vid +='<img src="../../public/img/homepage/paly.png">';
+        vid +='</div>';
+        vid +='</div>';
+        video.innerHTML=vid;
+    }else if(name=="02_06"){
+        var video=document.getElementById("video");
+        //var sroure=document.getElementById("video_source")
+        var vid  ='<div class="video_img">';
+        vid += '<img class="video_img_src" id="video_img_src" src="../../public/img/poster/制服.JPG">';
+        vid +='</div>';
+        vid +='<video class="video_01" id="video_01" controls preload="auto" >';
+        vid +='<source class="video_source" id="video_source" src="../../public/img/video.ogg/制服.mp4">';
+        vid +='</video>';
+        vid +='<div class="video_center">';
+        vid +='<img src="../../public/img/homepage/paly.png">';
+        vid +='</div>';
+        vid +='</div>';
+        video.innerHTML=vid;
+    }else if(name=="02_07"){
+        var video=document.getElementById("video");
+        //var sroure=document.getElementById("video_source")
+        var vid  ='<div class="video_img">';
+        vid += '<img class="video_img_src" id="video_img_src" src="../../public/img/poster/制服丝袜.JPG">';
+        vid +='</div>';
+        vid +='<video class="video_01" id="video_01" controls preload="auto" >';
+        vid +='<source class="video_source" id="video_source" src="../../public/img/video.ogg/制服丝袜.mp4">';
+        vid +='</video>';
+        vid +='<div class="video_center">';
+        vid +='<img src="../../public/img/homepage/paly.png">';
+        vid +='</div>';
+        vid +='</div>';
+        video.innerHTML=vid;
     }
 
 
@@ -68,7 +124,7 @@ $(function () {
          function sum(){
          var  currentTime =  myVideo.currentTime;//获取当前播放时间
 
-         console.log(currentTime);//在调试器中打印
+         //console.log(currentTime);//在调试器中打印
          if (currentTime>20){
              myVideo.currentTime=0;
          document.getElementById("video_01").pause();
@@ -96,7 +152,7 @@ $(function () {
             var n2= c.lastIndexOf(".");
             var fName= c.substring(n1,n2);
             //console.log(videoname)
-            console.log(url)
+            //console.log(url)
             $.ajax({
                 type:"post",
                 url:url+"/pay/check",//检查请求视频是否付费地址
@@ -181,17 +237,6 @@ $(function () {
             }
         });
     })
-
-
-    })
-
-
-
-
-
-
-
-
     $(".success_x").on("touchstart", function () {
         $(".success").hide();
     });
@@ -201,6 +246,17 @@ $(function () {
     $(".being_x").on("touchstart", function () {
         $(".being_paid").hide();
     })
+
+
+
+}
+
+
+
+
+
+
+
 
 
 
