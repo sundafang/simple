@@ -48,6 +48,11 @@ a{
     background: #cccccc;
     margin-bottom: 20px;
     position: relative;
+    overflow: hidden;
+}
+.html_01{
+    width: 100%;
+    height:100%;
 }
 .video_img{
     width:100%;
@@ -60,13 +65,15 @@ a{
     height:100%;
 }
 .video_center{
-    position: absolute;
-    left:50%;
-    top:19%;
     width:50px;
     height:50px;
+    position:absolute;
+    top:50%;
+    left: 50%;
     margin-left: -25px;
     margin-top: -25px;
+
+
 }
 .video_center img{
     width:100%;
@@ -79,7 +86,6 @@ video{
     width:100%;
     height:100%;
     display: none;
-    object-fit:contain
 }
 .prompt{
     width:100%;
@@ -322,10 +328,10 @@ video{
     top: 50%;
     left: 50%;
     margin-left: -96px;
-    margin-top: -187.5px;
+    margin-top: -210px;
     background: #cbe2d0;
-    width: 192px;
-    height: 375px;
+    width: 210px;
+    height: 380px;
     border-radius: 20px;
 }
 .bomb_box_div{
@@ -339,7 +345,7 @@ video{
     width: 100%;
 }
 .bomb_box_p01{
-    width:90%;
+    width:94%;
     margin: auto;
     font-size: 12px;
     color: #3f5d3b;

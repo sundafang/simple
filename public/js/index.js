@@ -1,6 +1,9 @@
 /**
  * Created by Administrator on 2017/1/10 0010.
  */
+$(function () {
+
+
 //获取轮播元素
 var $banner_carousel_li = $(".banner_carousel_li");
 //获取轮播容器
@@ -184,14 +187,31 @@ $(".top_right").on("touchstart",function () {
 $(".cue_img").on("touchstart",function () {
     var a= $("input[name='sex']:checked").val();
     $(".payment_input02").val(a);
-    console.log(a)
+    //console.log(a)
 
     if ($("input[name='sex']:checked").val()){
         sessionStorage.setItem("data",$("input[name='sex']:checked").val());
     }else{
-        alert("失败");
+        console("失败");
     }
 });
+//上传图片信息到cookie
+    $(".list_img_src").on("touchstart",function () {
+        var a=$(this).attr("src");
+       var n1= a.lastIndexOf("/")+1;
+        var n2= a.lastIndexOf(".");
+        var name= a.substring(n1,n2);
+       // console.log(name)
+        if(name){
+            sessionStorage.setItem("name",name);
+           // console.log(name)
+        }else{
+           console("失败")
+        }
+    })
+
+
+
 
 //点击获取触点坐标。
 
@@ -199,6 +219,9 @@ $(".error").on("touchstart",function () {
     $(".bxc").css("display","none")
 });
 
+
+
+})
 
 
 
